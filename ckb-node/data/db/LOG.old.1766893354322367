@@ -1,0 +1,107 @@
+2025/12/28-09:07:57.430409 3fec RocksDB version: 8.5.4
+2025/12/28-09:07:57.432019 3fec Git sha 145a50ba007326eab90da9b12d697b35f5b60e7d
+2025/12/28-09:07:57.432070 3fec Compile date 2023-09-26 19:47:02
+2025/12/28-09:07:57.432105 3fec DB SUMMARY
+2025/12/28-09:07:57.432140 3fec DB Session ID:  8E3N3VTIEM98IRDMHUMT
+2025/12/28-09:07:57.435126 3fec CURRENT file:  CURRENT
+2025/12/28-09:07:57.435184 3fec IDENTITY file:  IDENTITY
+2025/12/28-09:07:57.435342 3fec MANIFEST file:  MANIFEST-000065 size: 3836 Bytes
+2025/12/28-09:07:57.435387 3fec SST files in D:\CKB-Project\ckb-node\data\db dir, Total Num: 18, files: 000046.sst 000047.sst 000048.sst 000049.sst 000050.sst 000051.sst 000052.sst 000053.sst 000054.sst 
+2025/12/28-09:07:57.435418 3fec Write Ahead Log file in D:\CKB-Project\ckb-node\data\db: 000064.log size: 0 ; 
+2025/12/28-09:07:57.445616 3fec                         Options.error_if_exists: 0
+2025/12/28-09:07:57.445650 3fec                       Options.create_if_missing: 1
+2025/12/28-09:07:57.445662 3fec                         Options.paranoid_checks: 1
+2025/12/28-09:07:57.445674 3fec             Options.flush_verify_memtable_count: 1
+2025/12/28-09:07:57.445685 3fec                               Options.track_and_verify_wals_in_manifest: 0
+2025/12/28-09:07:57.445698 3fec        Options.verify_sst_unique_id_in_manifest: 1
+2025/12/28-09:07:57.445709 3fec                                     Options.env: 00000147686C4AC0
+2025/12/28-09:07:57.445721 3fec                                      Options.fs: WinFS
+2025/12/28-09:07:57.445733 3fec                                Options.info_log: 0000014768A13060
+2025/12/28-09:07:57.445745 3fec                Options.max_file_opening_threads: 16
+2025/12/28-09:07:57.445756 3fec                              Options.statistics: 0000014768A3B2D0
+2025/12/28-09:07:57.445768 3fec                               Options.use_fsync: 0
+2025/12/28-09:07:57.445779 3fec                       Options.max_log_file_size: 0
+2025/12/28-09:07:57.445790 3fec                  Options.max_manifest_file_size: 1073741824
+2025/12/28-09:07:57.445801 3fec                   Options.log_file_time_to_roll: 0
+2025/12/28-09:07:57.445814 3fec                       Options.keep_log_file_num: 32
+2025/12/28-09:07:57.445826 3fec                    Options.recycle_log_file_num: 0
+2025/12/28-09:07:57.445837 3fec                         Options.allow_fallocate: 1
+2025/12/28-09:07:57.445849 3fec                        Options.allow_mmap_reads: 0
+2025/12/28-09:07:57.445859 3fec                       Options.allow_mmap_writes: 0
+2025/12/28-09:07:57.445870 3fec                        Options.use_direct_reads: 0
+2025/12/28-09:07:57.445881 3fec                        Options.use_direct_io_for_flush_and_compaction: 0
+2025/12/28-09:07:57.445893 3fec          Options.create_missing_column_families: 1
+2025/12/28-09:07:57.445910 3fec                              Options.db_log_dir: 
+2025/12/28-09:07:57.445922 3fec                                 Options.wal_dir: 
+2025/12/28-09:07:57.445933 3fec                Options.table_cache_numshardbits: 6
+2025/12/28-09:07:57.445944 3fec                         Options.WAL_ttl_seconds: 0
+2025/12/28-09:07:57.445955 3fec                       Options.WAL_size_limit_MB: 0
+2025/12/28-09:07:57.445966 3fec                        Options.max_write_batch_group_size_bytes: 1048576
+2025/12/28-09:07:57.445977 3fec             Options.manifest_preallocation_size: 4194304
+2025/12/28-09:07:57.445988 3fec                     Options.is_fd_close_on_exec: 1
+2025/12/28-09:07:57.446000 3fec                   Options.advise_random_on_open: 1
+2025/12/28-09:07:57.446010 3fec                    Options.db_write_buffer_size: 0
+2025/12/28-09:07:57.446022 3fec                    Options.write_buffer_manager: 0000014768A28140
+2025/12/28-09:07:57.446033 3fec         Options.access_hint_on_compaction_start: 1
+2025/12/28-09:07:57.446044 3fec           Options.random_access_max_buffer_size: 1048576
+2025/12/28-09:07:57.446056 3fec                      Options.use_adaptive_mutex: 0
+2025/12/28-09:07:57.446067 3fec                            Options.rate_limiter: 0000000000000000
+2025/12/28-09:07:57.446152 3fec     Options.sst_file_manager.rate_bytes_per_sec: 0
+2025/12/28-09:07:57.446170 3fec                       Options.wal_recovery_mode: 2
+2025/12/28-09:07:57.446182 3fec                  Options.enable_thread_tracking: 0
+2025/12/28-09:07:57.446193 3fec                  Options.enable_pipelined_write: 0
+2025/12/28-09:07:57.446204 3fec                  Options.unordered_write: 0
+2025/12/28-09:07:57.446215 3fec         Options.allow_concurrent_memtable_write: 1
+2025/12/28-09:07:57.446226 3fec      Options.enable_write_thread_adaptive_yield: 1
+2025/12/28-09:07:57.446236 3fec             Options.write_thread_max_yield_usec: 100
+2025/12/28-09:07:57.446248 3fec            Options.write_thread_slow_yield_usec: 3
+2025/12/28-09:07:57.446259 3fec                               Options.row_cache: None
+2025/12/28-09:07:57.446270 3fec                              Options.wal_filter: None
+2025/12/28-09:07:57.446279 3fec             Options.avoid_flush_during_recovery: 0
+2025/12/28-09:07:57.446288 3fec             Options.allow_ingest_behind: 0
+2025/12/28-09:07:57.446296 3fec             Options.two_write_queues: 0
+2025/12/28-09:07:57.446304 3fec             Options.manual_wal_flush: 0
+2025/12/28-09:07:57.446313 3fec             Options.wal_compression: 0
+2025/12/28-09:07:57.446324 3fec             Options.atomic_flush: 0
+2025/12/28-09:07:57.446334 3fec             Options.avoid_unnecessary_blocking_io: 0
+2025/12/28-09:07:57.446346 3fec                 Options.persist_stats_to_disk: 0
+2025/12/28-09:07:57.446356 3fec                 Options.write_dbid_to_manifest: 0
+2025/12/28-09:07:57.446367 3fec                 Options.log_readahead_size: 0
+2025/12/28-09:07:57.446377 3fec                 Options.file_checksum_gen_factory: Unknown
+2025/12/28-09:07:57.446388 3fec                 Options.best_efforts_recovery: 0
+2025/12/28-09:07:57.446399 3fec                Options.max_bgerror_resume_count: 2147483647
+2025/12/28-09:07:57.446410 3fec            Options.bgerror_resume_retry_interval: 1000000
+2025/12/28-09:07:57.446421 3fec             Options.allow_data_in_errors: 0
+2025/12/28-09:07:57.446432 3fec             Options.db_host_id: __hostname__
+2025/12/28-09:07:57.446443 3fec             Options.enforce_single_del_contracts: true
+2025/12/28-09:07:57.446455 3fec             Options.max_background_jobs: 6
+2025/12/28-09:07:57.446465 3fec             Options.max_background_compactions: -1
+2025/12/28-09:07:57.446477 3fec             Options.max_subcompactions: 1
+2025/12/28-09:07:57.446488 3fec             Options.avoid_flush_during_shutdown: 0
+2025/12/28-09:07:57.446499 3fec           Options.writable_file_max_buffer_size: 1048576
+2025/12/28-09:07:57.446510 3fec             Options.delayed_write_rate : 16777216
+2025/12/28-09:07:57.446521 3fec             Options.max_total_wal_size: 134217728
+2025/12/28-09:07:57.446532 3fec             Options.delete_obsolete_files_period_micros: 21600000000
+2025/12/28-09:07:57.446544 3fec                   Options.stats_dump_period_sec: 600
+2025/12/28-09:07:57.446555 3fec                 Options.stats_persist_period_sec: 600
+2025/12/28-09:07:57.446566 3fec                 Options.stats_history_buffer_size: 1048576
+2025/12/28-09:07:57.446577 3fec                          Options.max_open_files: -1
+2025/12/28-09:07:57.446587 3fec                          Options.bytes_per_sync: 1048576
+2025/12/28-09:07:57.446598 3fec                      Options.wal_bytes_per_sync: 0
+2025/12/28-09:07:57.446608 3fec                   Options.strict_bytes_per_sync: 0
+2025/12/28-09:07:57.446619 3fec       Options.compaction_readahead_size: 0
+2025/12/28-09:07:57.446630 3fec                  Options.max_background_flushes: -1
+2025/12/28-09:07:57.446641 3fec Compression algorithms supported:
+2025/12/28-09:07:57.446652 3fec 	kZSTD supported: 0
+2025/12/28-09:07:57.446663 3fec 	kSnappyCompression supported: 1
+2025/12/28-09:07:57.446674 3fec 	kBZip2Compression supported: 0
+2025/12/28-09:07:57.446685 3fec 	kZlibCompression supported: 0
+2025/12/28-09:07:57.446696 3fec 	kLZ4Compression supported: 1
+2025/12/28-09:07:57.446756 3fec 	kXpressCompression supported: 0
+2025/12/28-09:07:57.446773 3fec 	kLZ4HCCompression supported: 1
+2025/12/28-09:07:57.446784 3fec 	kZSTDNotFinalCompression supported: 0
+2025/12/28-09:07:57.446798 3fec Fast CRC32 supported: Not supported on x86
+2025/12/28-09:07:57.446809 3fec DMutex implementation: std::mutex
+2025/12/28-09:07:57.448028 3fec [WARN] [db/db_impl/db_impl_open.cc:2214] DB::Open() failed: IO error: Failed to create lock file: D:\CKB-Project\ckb-node\data\db/LOCK: The process cannot access the file because it is being used by another process.
+2025/12/28-09:07:57.448055 3fec [db/db_impl/db_impl.cc:496] Shutdown: canceling all background work
+2025/12/28-09:07:57.448114 3fec [db/db_impl/db_impl.cc:698] Shutdown complete
