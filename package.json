@@ -1,0 +1,27 @@
+{
+  "name": "ckb-project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arunkumarkanpur/on-chain-counter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arunkumarkanpur/on-chain-counter/issues"
+  },
+  "homepage": "https://github.com/Arunkumarkanpur/on-chain-counter#readme",
+  "dependencies": {
+    "@ckb-lumos/codec": "^0.23.0",
+    "@ckb-lumos/lumos": "^0.23.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  }
+}
