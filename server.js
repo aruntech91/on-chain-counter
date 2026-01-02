@@ -9,11 +9,10 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://ckb-counter-frontend.onrender.com" // 👈 change later if name differs
+    "https://on-chain-counter-ecru.vercel.app/"
   ],
+  methods: ["GET", "POST"],
 }));
-
-app.use(bodyParser.json());
 
 /* 🔢 SIMPLE COUNTER STATE (DEMO PURPOSE) */
 let counter = 0;
