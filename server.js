@@ -7,11 +7,9 @@ const app = express();
 
 /* ✅ ALLOW FRONTEND (LOCAL + RENDER) */
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://on-chain-counter-ecru.vercel.app/"
-  ],
+  origin: "*",
   methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
 }));
 
 /* 🔢 SIMPLE COUNTER STATE (DEMO PURPOSE) */
