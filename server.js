@@ -1,18 +1,16 @@
 import express from "express";
-import bodyParser from "body-parser";
 import cors from "cors";
-import { exec } from "child_process";
 
 const app = express();
 
-/* ✅ ALLOW FRONTEND (LOCAL + RENDER) */
+/* ✅ ALLOW YOUR VERCEL FRONTEND */
 app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"],
+  origin: "https://on-chain-counter-ecru.vercel.app",
 }));
 
-/* 🔢 SIMPLE COUNTER STATE (DEMO PURPOSE) */
+app.use(express.json());
+
+/* 🔢 IN-MEMORY COUNTER (DEMO) */
 let counter = 0;
 
 /* ✅ READ COUNTER */
@@ -20,7 +18,7 @@ app.get("/read", (req, res) => {
   res.json({ counter });
 });
 
-/* ✅ INCREMENT COUNTER */
+/* ✅ INCREMENT COUNTER (NO BLOCKCHAIN HERE) */
 app.post("/increment", (req, res) => {
   const { address } = req.body;
 
@@ -30,19 +28,16 @@ app.post("/increment", (req, res) => {
 
   console.log("Increment request from:", address);
 
-  // ✅ Backend does NOT sign blockchain TX
   counter += 1;
 
-  res.json({
+  return res.json({
     success: true,
     counter,
   });
 });
 
-
-/* ✅ RENDER-SAFE PORT (THIS IS THE MAIN FIX) */
+/* ✅ RENDER PORT FIX */
 const PORT = process.env.PORT || 3001;
-
 app.listen(PORT, () => {
   console.log(`Backend running on port ${PORT}`);
 });
