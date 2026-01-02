@@ -5,9 +5,12 @@ import { exec } from "child_process";
 
 const app = express();
 
-/* ✅ ALLOW FRONTEND */
+/* ✅ ALLOW FRONTEND (LOCAL + RENDER) */
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://ckb-counter-frontend.onrender.com" // 👈 change later if name differs
+  ],
 }));
 
 app.use(bodyParser.json());
@@ -36,7 +39,7 @@ app.post("/increment", (req, res) => {
       return res.status(500).json({ error: "TX failed" });
     }
 
-    counter += 1; // ✅ UPDATE COUNTER AFTER TX
+    counter += 1;
 
     console.log("Counter incremented successfully");
 
@@ -47,6 +50,9 @@ app.post("/increment", (req, res) => {
   });
 });
 
-app.listen(3001, () => {
-  console.log("Backend running on http://localhost:3001");
+/* ✅ RENDER-SAFE PORT (THIS IS THE MAIN FIX) */
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`Backend running on port ${PORT}`);
 });
