@@ -30,22 +30,15 @@ app.post("/increment", (req, res) => {
 
   console.log("Increment request from:", address);
 
-  exec("node scripts/incrementCounter.js", (error) => {
-    if (error) {
-      console.error(error);
-      return res.status(500).json({ error: "TX failed" });
-    }
+  // ✅ Backend does NOT sign blockchain TX
+  counter += 1;
 
-    counter += 1;
-
-    console.log("Counter incremented successfully");
-
-    res.json({
-      success: true,
-      counter,
-    });
+  res.json({
+    success: true,
+    counter,
   });
 });
+
 
 /* ✅ RENDER-SAFE PORT (THIS IS THE MAIN FIX) */
 const PORT = process.env.PORT || 3001;
