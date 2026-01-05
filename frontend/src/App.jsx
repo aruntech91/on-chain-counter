@@ -54,12 +54,13 @@ function App() {
   };
 
   return (
-    <div className="p-9 bg-black min-h-screen text-center">
+    <div className="p-9 bg-black h-200">
       <h1 className="font-bold text-2xl text-red-700">
         On-Chain Counter (CKB)
       </h1>
 
-      <hr className="my-4 border-gray-600" />
+<hr className="text-white" /><hr />
+<div className="mt-26 text-center">
 
       {/* 📱 MOBILE WARNING */}
       {isMobile && (
@@ -74,7 +75,7 @@ function App() {
         <button
           onClick={handleConnect}
           disabled={connecting || isMobile}
-          className={`border rounded-xl p-2 font-semibold text-xl text-white
+          className={`border text-white rounded-xl p-2 bg-blue-500 hover:bg-blue-600 font-semibold text-xl
             ${
               isMobile
                 ? "bg-gray-600 cursor-not-allowed"
@@ -107,6 +108,7 @@ function App() {
           {incrementing ? "Processing..." : "Increment Counter"}
         </button>
       )}
+    </div>
     </div>
   );
 }
