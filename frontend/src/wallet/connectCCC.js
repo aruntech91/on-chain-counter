@@ -1,8 +1,20 @@
 export async function connectWallet() {
   console.log("CONNECT WALLET CALLED");
 
-  if (!window.ckb) {
-    alert("CCC Wallet not installed");
+  // ✅ HARD BLOCK MOBILE
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    console.warn("Mobile device detected — CCC not supported");
+    return null;
+  }
+
+  // ✅ CHECK CCC WALLET (DESKTOP ONLY)
+  if (!window.ckb || !window.ckb.request) {
+    alert(
+      "CCC Wallet not detected.\n\n" +
+      "Please install CCC Wallet extension on Desktop Chrome or Edge."
+    );
     return null;
   }
 
@@ -13,8 +25,8 @@ export async function connectWallet() {
 
     console.log("CCC Accounts:", accounts);
     return accounts[0];
-  } catch (err) {
-    console.error("Wallet connection failed", err);
-    throw err;
+  } catch (error) {
+    console.error("Wallet connection error:", error);
+    return null;
   }
 }

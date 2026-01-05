@@ -58,9 +58,17 @@ function App() {
 
      <div className="mt-26 text-center">
       {!address ? (
-        <button className="border text-white rounded-xl p-2 bg-blue-500 hover:bg-blue-600 font-semibold text-xl" onClick={handleConnect} disabled={connecting}>
-          {connecting ? "Connecting..." : "Connect CCC Wallet"}
-        </button>
+      <button
+  disabled={isMobile}
+  className={`${
+    isMobile
+      ? "bg-gray-500 cursor-not-allowed"
+      : "bg-blue-600 hover:bg-blue-700"
+  }`}
+>
+  Connect CCC Wallet
+</button>
+
       ) : (
         <span className="rounded-2xl p-2 border-2 text-green-800">
           <strong>Wallet Connected:</strong>
