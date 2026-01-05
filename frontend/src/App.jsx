@@ -85,16 +85,16 @@ function App() {
           {connecting ? "Connecting..." : "Connect CCC Wallet"}
         </button>
       ) : (
-        <div className="mt-4 border-2 rounded-xl p-3 text-green-400 break-all">
+         <span className="rounded-2xl p-2 border-2 text-green-800">
           <strong>Wallet Connected:</strong>
-          <div className="text-sm mt-1">{address}</div>
-        </div>
+          
+          <small className="text-xl font-semibold text-white"> {address}</small>
+        </span>
       )}
 
-      <hr className="my-8 border-gray-600" />
-
+<hr className="text-white mt-14 md:ml-60 ml-10 md:mr-60 mr-10" /><hr className="text-white md:ml-60 ml-10 md:mr-60 mr-10" />
       {/* 🔢 COUNTER */}
-      <h2 className="text-white font-semibold text-4xl">
+      <h2 className="text-white mt-9 font-semibold text-4xl">
         Counter: {count}
       </h2>
 
