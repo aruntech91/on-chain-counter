@@ -3,8 +3,9 @@ import { connectWallet } from "./wallet/connectCCC";
 import { readCounter } from "./blockchain/readCounter";
 import { incrementCounterOnChain } from "./blockchain/onChainIncrement";
 import "./index.css";
-const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
+// ✅ Detect mobile once
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 function App() {
   const [address, setAddress] = useState(null);
@@ -13,7 +14,10 @@ function App() {
   const [connecting, setConnecting] = useState(false);
   const [incrementing, setIncrementing] = useState(false);
 
+  /* 🔗 CONNECT WALLET (DESKTOP ONLY) */
   const handleConnect = async () => {
+    if (isMobile) return; // ✅ HARD STOP FOR MOBILE
+
     setConnecting(true);
     try {
       const addr = await connectWallet();
@@ -24,17 +28,16 @@ function App() {
       setCount(value);
       setInitialized(true);
     } catch (err) {
+      console.error(err);
       alert("Wallet connection failed");
     } finally {
       setConnecting(false);
     }
   };
 
+  /* ➕ INCREMENT COUNTER */
   const handleIncrement = async () => {
-    if (!address) {
-      alert("Connect wallet first");
-      return;
-    }
+    if (!address) return;
 
     setIncrementing(true);
     try {
@@ -43,6 +46,7 @@ function App() {
       setCount(updatedValue);
       alert("Counter incremented on-chain!");
     } catch (err) {
+      console.error(err);
       alert("Increment failed");
     } finally {
       setIncrementing(false);
@@ -50,42 +54,59 @@ function App() {
   };
 
   return (
-    
-    <div className="p-9 bg-black h-200 ">
-      <h1 className=" font-bold text-2xl text-red-700 ">On-Chain Counter (CKB)</h1>
+    <div className="p-9 bg-black min-h-screen text-center">
+      <h1 className="font-bold text-2xl text-red-700">
+        On-Chain Counter (CKB)
+      </h1>
 
-      <hr className="text-white" /><hr />
+      <hr className="my-4 border-gray-600" />
 
-     <div className="mt-26 text-center">
-      {!address ? (
-      <button
-  disabled={isMobile}
-  className={`${
-    isMobile
-      ? "bg-gray-500 cursor-not-allowed"
-      : "bg-blue-600 hover:bg-blue-700"
-  }`}
->
-  Connect CCC Wallet
-</button>
-
-      ) : (
-        <span className="rounded-2xl p-2 border-2 text-green-800">
-          <strong>Wallet Connected:</strong>
-          
-          <small className="text-xl font-semibold text-white"> {address}</small>
-        </span>
+      {/* 📱 MOBILE WARNING */}
+      {isMobile && (
+        <div className="bg-yellow-900 text-yellow-300 p-3 rounded-lg mb-6">
+          ⚠️ CCC Wallet is <b>not supported on mobile browsers</b>.<br />
+          Please open this site on <b>Desktop Chrome</b> with CCC Wallet installed.
+        </div>
       )}
-<hr className="text-white mt-14 md:ml-60 ml-10 md:mr-60 mr-10" /><hr className="text-white md:ml-60 ml-10 md:mr-60 mr-10" />
 
-      <h2 className="text-white mt-9 font-semibold text-4xl">Counter: {count}</h2>
+      {/* 🔘 CONNECT BUTTON */}
+      {!address ? (
+        <button
+          onClick={handleConnect}
+          disabled={connecting || isMobile}
+          className={`border rounded-xl p-2 font-semibold text-xl text-white
+            ${
+              isMobile
+                ? "bg-gray-600 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700"
+            }`}
+        >
+          {connecting ? "Connecting..." : "Connect CCC Wallet"}
+        </button>
+      ) : (
+        <div className="mt-4 border-2 rounded-xl p-3 text-green-400 break-all">
+          <strong>Wallet Connected:</strong>
+          <div className="text-sm mt-1">{address}</div>
+        </div>
+      )}
 
+      <hr className="my-8 border-gray-600" />
+
+      {/* 🔢 COUNTER */}
+      <h2 className="text-white font-semibold text-4xl">
+        Counter: {count}
+      </h2>
+
+      {/* ➕ INCREMENT BUTTON */}
       {address && initialized && (
-        <button className="border-amber-50 border-2 rounded-xl p-1 bg-green-600 hover:bg-green-800 font-semibold mt-5 text-black" onClick={handleIncrement} disabled={incrementing}>
+        <button
+          onClick={handleIncrement}
+          disabled={incrementing}
+          className="mt-6 border-2 rounded-xl p-2 bg-green-600 hover:bg-green-800 font-semibold text-black"
+        >
           {incrementing ? "Processing..." : "Increment Counter"}
         </button>
       )}
-      </div>
     </div>
   );
 }
