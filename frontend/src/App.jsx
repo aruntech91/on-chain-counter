@@ -3,6 +3,8 @@ import { connectWallet } from "./wallet/connectCCC";
 import { readCounter } from "./blockchain/readCounter";
 import { incrementCounterOnChain } from "./blockchain/onChainIncrement";
 import "./index.css";
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
 
 function App() {
   const [address, setAddress] = useState(null);
